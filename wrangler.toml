@@ -1,0 +1,3 @@
+name = "mediafire-generator"
+main = "worker.js"
+compatibility_date = "2023-10-30"
