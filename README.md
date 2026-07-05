@@ -1,57 +1,61 @@
-# 📥 MediaFire Direct Link Generator API — Cloudflare Worker
+# 📥 MediaFire Direct Link Generator API — Express & Vercel
 
-A free, lightweight API to instantly generate direct download links from MediaFire URLs. Built to run perfectly on **Cloudflare Workers** at the edge.
+A lightweight API to instantly generate direct download links from MediaFire URLs. Built with Node.js and Express, ready to be deployed on **Vercel** or any **VPS**.
 
 > Built by [Nimesh Piyumal](https://ceylonnet.com)
 
 ---
 
-## 🚀 One-Click Deploy
+## 🚀 One-Click Deploy (Vercel)
  
-[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/nimesh-piyumal/mediafire-generator)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
  
-> Click the button above to instantly deploy your own instance to Cloudflare Workers — no local setup needed!
+> Push this repository to GitHub and import it into Vercel for instant serverless deployment!
 
 ---
 
 ## ✨ Features
 
-- 🆓 **Free to run** — Deployable on Cloudflare Workers free tier (100,000 requests/day).
-- ⚡ **Edge execution** — Runs on Cloudflare's global network for ultra-low latency.
-- 🎯 **Accurate Scraping** — Uses Cheerio to parse MediaFire pages and extract direct links securely.
+- ⚡ **Serverless Ready** — Pre-configured with `vercel.json` for instant deployment on Vercel.
+- 💻 **VPS Compatible** — Runs perfectly on any VPS using Node.js (PM2 recommended).
+- 🎯 **Accurate Scraping** — Uses Cheerio and Axios to parse MediaFire pages and extract direct links securely.
 - 🌍 **CORS enabled** — Ready to be integrated into any web browser frontend application.
-- 📦 **Lightweight** — Minimal code footprint with pure ES modules.
+- 📦 **Lightweight** — Minimal code footprint using Express.js.
 
 ---
 
 ## 🚀 Quick Start
 
-### Deploy Your Own
+### Deploy Locally or on a VPS
 
 1. **Clone this repo**
    ```bash
    git clone https://github.com/nimesh-piyumal/mediafire-generator.git
-   cd mediafire-generator
+   cd mediafire-generator/mediafire-api
    ```
 
-2. **Install Dependencies & Wrangler CLI**
+2. **Install Dependencies**
    ```bash
    npm install
-   npm install -g wrangler
-   wrangler login
    ```
 
-3. **Test Locally**
+3. **Run the API Server**
    ```bash
-   npm run dev
+   node index.js
    ```
+   *The server will start on port 3000.*
 
-4. **Deploy to Cloudflare Workers**
+### Deploy to Vercel (CLI)
+
+1. **Install Vercel CLI**
    ```bash
-   npm run deploy
+   npm install -g vercel
    ```
 
-5. **Done!** Your API is live at `https://mediafire-generator.<your-subdomain>.workers.dev`
+2. **Deploy**
+   ```bash
+   vercel
+   ```
 
 ---
 
@@ -65,7 +69,7 @@ Returns API health status.
 {
   "status": true,
   "creator": "Nimesh Piyumal",
-  "response": "Mediafire Link Generator API"
+  "response": "Mediafire Link Generator API (Express)"
 }
 ```
 
@@ -97,7 +101,7 @@ GET /api/generate?url=https://www.mediafire.com/file/fqnx7ieaq8nc65a/Shoncine+Re
 
 ### Fetch API (JavaScript / Node.js)
 ```javascript
-const url = "https://mediafire-generator.nimeshveo.workers.dev/api/generate?url=https://www.mediafire.com/file/fqnx7ieaq8nc65a/Shoncine+Reels+Studio+Setup+3.0.0.exe/file";
+const url = "https://your-vercel-app.vercel.app/api/generate?url=https://www.mediafire.com/file/fqnx7ieaq8nc65a/Shoncine+Reels+Studio+Setup+3.0.0.exe/file";
 
 const response = await fetch(url);
 const data = await response.json();
@@ -113,7 +117,7 @@ if (data.success) {
 ```python
 import requests
 
-api_url = "https://mediafire-generator.nimeshveo.workers.dev/api/generate"
+api_url = "https://your-vercel-app.vercel.app/api/generate"
 mediafire_url = "https://www.mediafire.com/file/fqnx7ieaq8nc65a/Shoncine+Reels+Studio+Setup+3.0.0.exe/file"
 
 response = requests.get(api_url, params={"url": mediafire_url})
