@@ -1,21 +1,15 @@
 {
   "name": "mediafire-generator",
   "version": "1.0.0",
-  "description": "",
-  "license": "MIT",
-  "author": "Nimesh Piyumal",
-  "type": "module",
-  "main": "worker.js",
+  "main": "index.js",
   "scripts": {
-    "dev": "wrangler dev",
-    "deploy": "wrangler deploy",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "author": "Nimesh Piyumal",
   "dependencies": {
+    "axios": "^1.18.1",
     "cheerio": "^1.2.0",
+    "cors": "^2.8.6",
     "express": "^5.2.1"
-  },
-  "devDependencies": {
-    "wrangler": "^4.94.0"
   }
 }
