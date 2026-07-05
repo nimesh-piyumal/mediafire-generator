@@ -1,4 +1,4 @@
-# 📥 MediaFire Direct Link Generator API — Express & Vercel
+# 📥 MediaFire Direct Link Generator API - Express & Vercel
 
 A lightweight API to instantly generate direct download links from MediaFire URLs. Built with Node.js and Express, ready to be deployed on **Vercel** or any **VPS**.
 
